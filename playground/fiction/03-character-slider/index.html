@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lively Talk with Slider</title>
+  <link rel="stylesheet" href="/pack/oiddefault.css">
+  <script src="/pack/oid-fiction.js"></script>
+</head>
+<body>
+  <h1>Lively Talk with Slider</h1>
+  <p>That is a lively talk in which the slider updates the value inside speech.
+     The X character indicates the position to insert the value.</p>
+
+  <oid-sphere assets="../assets/" stylesheet="/pack/oiddefault.css">
+    <lively-talk-oid
+      speech="My age is {{}} years."
+      subscribe="show/message~display">
+    </lively-talk-oid>
+    <slider-oid index publish="initial~show/message;change~show/message">
+    </slider-oid>
+  </oid-sphere>
+</body>
+</html>

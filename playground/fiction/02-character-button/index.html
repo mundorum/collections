@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lively Talk with Button</title>
+  <link rel="stylesheet" href="/pack/oiddefault.css">
+  <script src="/pack/oid-fiction.js"></script>
+</head>
+<body>
+  <h1>Lively Talk with Button</h1>
+  <p>This is a lively talk in which the button triggers the speech.</p>
+
+  <oid-sphere assets="../assets/" stylesheet="/pack/oiddefault.css">
+    <button-oid label="Start"
+      value="I am a terrible dinosaur!"
+      publish="click~show/message">
+    </button-oid>
+
+    <lively-talk-oid subscribe="show/message~display">
+    </lively-talk-oid>
+  </oid-sphere>
+</body>
+</html>

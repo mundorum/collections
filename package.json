@@ -1,0 +1,27 @@
+{
+  "name": "mundorum-collections",
+  "version": "1.0.0",
+  "description": "Thematic Oid collections.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mundorum/collections.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mundorum/collections/issues"
+  },
+  "homepage": "https://github.com/mundorum/collections#readme",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
