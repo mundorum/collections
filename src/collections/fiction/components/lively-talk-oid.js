@@ -23,6 +23,10 @@ export class LivelyTalkOid extends OidUI {
       fspeech = fspeech.replace(/{{[ \t]*[^}]*}}/g, '')
     this._presentation.querySelector('#speech').innerHTML = fspeech
   }
+
+  handleClear () {
+    this._presentation.querySelector('#speech').innerHTML = ''
+  }
 }
 
 Oid.component({
@@ -33,7 +37,7 @@ Oid.component({
     bubble: {default: 'assets:images/bubble-landscape.svg'},
     speech: {}
   },
-  receive: {'display': 'handleSend'},
+  receive: {'display': 'handleSend', 'clear': 'handleClear'},
   provide: ['itf:transfer'],
   implementation: LivelyTalkOid,
   styles: css`
@@ -45,7 +49,7 @@ Oid.component({
     background-image: url("{{url:this.bubble}}");
   }`,
   template: html`
-  <div id="oid-prs" style="width:50%;display:flex;flex-direction:row">
+  <div id="oid-prs" style="width:100%;display:flex;flex-direction:row">
     <img src="{{url:this.character}}" width="128px">
     <div class="bubble"><div id="speech"></div></div>
   </div>`
