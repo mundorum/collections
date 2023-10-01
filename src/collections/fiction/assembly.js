@@ -1,5 +1,5 @@
-import { Bus } from '../../lib/oidlib-dev.js'
+import { Sphere, Bus } from '../../lib/oidlib-dev.js'
 import { LivelyTalkOid } from './components/lively-talk-oid.js'
 
-export { Bus }
+export { Sphere, Bus }
 export { LivelyTalkOid }
