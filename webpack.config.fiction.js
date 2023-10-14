@@ -1,7 +1,10 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/collections/fiction/assembly.js',
+  entry: [
+    './src/collections/fiction/assembly.js',
+    './src/collections/assembly.js'
+  ],
   output: {
     filename: 'oid-fiction.js',
     path: path.resolve(__dirname, 'pack'),
@@ -11,5 +14,6 @@ module.exports = {
       type: 'umd'
     }
   },
+  // externals: '/pack/oidlib.js',
   mode: 'production'
 }

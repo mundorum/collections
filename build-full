@@ -1,0 +1,2 @@
+npx webpack --config webpack.config.full.js --mode=development
+npx webpack --config webpack.config.full.dev.js

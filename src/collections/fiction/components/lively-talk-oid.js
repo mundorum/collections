@@ -18,7 +18,8 @@ export class LivelyTalkOid extends OidUI {
             return value
           })
       } else if (message.value)
-        fspeech += message.value
+        fspeech += message.value.replace(/\n/g, '<br>')
+                                .replace(/[ \t]/g, '&nbsp;')
     } else
       fspeech = fspeech.replace(/{{[ \t]*[^}]*}}/g, '')
     this._presentation.querySelector('#speech').innerHTML = fspeech
@@ -41,6 +42,9 @@ Oid.component({
   provide: ['itf:transfer'],
   implementation: LivelyTalkOid,
   styles: css`
+  .character {
+    width: 128px;
+  }
   .bubble {
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -50,7 +54,7 @@ Oid.component({
   }`,
   template: html`
   <div id="oid-prs" style="width:100%;display:flex;flex-direction:row">
-    <img src="{{url:this.character}}" width="128px">
+    <img src="{{url:this.character}}" class="character">
     <div class="bubble"><div id="speech"></div></div>
   </div>`
 })

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Basic Blockly</title>
+  <link rel="stylesheet" href="/pack/oiddefault.css">
+  <!-- <script src="/pack/oidlib.js"></script> -->
+  <script src="blockly-oid-custom.js" type="module"></script>
+</head>
+<body>
+  <oid-sphere assets="../assets/" stylesheet="/pack/oiddefault.css" global></oid-sphere>
+  <div style="width:100%;height:100vh">
+  <split-pane-oid publish="resize~pane/resize">
+    <div slot="side-a">
+      <lively-talk-oid subscribe="blocks/updated~display"></lively-talk-oid>
+    </div>
+    <div slot="side-b">
+      <blockly-oid custom="heart" publish="update~blocks/updated" subscribe="pane/resize~resize"></blockly-oid>
+    </div>
+  </split-pane-oid>
+  </div>
+</body>
+</html>

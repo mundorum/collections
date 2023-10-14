@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Styled Lively Talk</title>
+  <link rel="stylesheet" href="/pack/oiddefault.css">
+  <script src="lively-talk-oid-styled.js" type="module"></script>
+</head>
+<body>
+  <h1>Styled Lively Talk</h1>
+  <p>This example changes the lively talk dimensions through style customization.</p>
+
+  <oid-sphere assets="../assets/" stylesheet="/pack/oiddefault.css">
+    <button-oid label="Talk"
+      value="I am a terrible dinosaur!"
+      publish="click~show/message">
+    </button-oid>
+
+    <lively-talk-oid
+      custom="big"
+      subscribe="show/message~display">
+    </lively-talk-oid>
+  </oid-sphere>
+</body>
+</html>
