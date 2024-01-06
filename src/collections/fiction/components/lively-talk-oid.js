@@ -1,9 +1,13 @@
 import { html, css, Oid, OidUI } from '/src/lib/oidlib-dev.js'
 
 export class LivelyTalkOid extends OidUI {
-  connectedCallback () {
-    super.connectedCallback()
+  async connectedCallback () {
+    await super.connectedCallback()
     this.handleSend()
+  }
+
+  handleProcess (topic, message) {
+    this._callCustom('process', message)
   }
 
   handleSend (topic, message) {
@@ -19,10 +23,10 @@ export class LivelyTalkOid extends OidUI {
           })
       } else if (message.value)
         fspeech += message.value.replace(/\n/g, '<br>')
-                                .replace(/[ \t]/g, '&nbsp;')
     } else
       fspeech = fspeech.replace(/{{[ \t]*[^}]*}}/g, '')
     this._presentation.querySelector('#speech').innerHTML = fspeech
+    this._notify('update', {value: fspeech})
   }
 
   handleClear () {
@@ -38,7 +42,11 @@ Oid.component({
     bubble: {default: 'assets:images/bubble-landscape.svg'},
     speech: {}
   },
-  receive: {'display': 'handleSend', 'clear': 'handleClear'},
+  receive: {
+    'process': 'handleProcess',
+    'display': 'handleSend',
+    'clear': 'handleClear'
+  },
   provide: ['itf:transfer'],
   implementation: LivelyTalkOid,
   styles: css`
@@ -51,10 +59,15 @@ Oid.component({
     flex-basis: 100%;
     padding: 15px 15px 10px 40px;
     background-image: url("{{url:this.bubble}}");
+  }
+  .speech {
+    font-size: 2.5vh;
+    inline-size: 100%;
+    overflow-wrap: break-word;
   }`,
   template: html`
   <div id="oid-prs" style="width:100%;display:flex;flex-direction:row">
     <img src="{{url:this.character}}" class="character">
-    <div class="bubble"><div id="speech"></div></div>
+    <div class="bubble"><div class="speech" id="speech"></div></div>
   </div>`
 })
