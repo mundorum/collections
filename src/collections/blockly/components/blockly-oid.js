@@ -1,9 +1,10 @@
 import { html, css, Oid, OidUI } from '/src/lib/oidlib-dev.js'
 import * as Blockly from 'blockly'
-import {javascriptGenerator} from 'blockly/javascript'
+export const jsonGenerator = new Blockly.Generator('JSON')
 
 export class BlocklyOid extends OidUI {
   async connectedCallback () {
+    this._lastUpdate = ''
     await super.connectedCallback()
     const blocks = this._getCustomField('blocks')
     if (blocks != null) {
@@ -12,7 +13,7 @@ export class BlocklyOid extends OidUI {
           blocks))
       const generator = this._getCustomField('generator')
       if (generator != null)
-        Object.assign(javascriptGenerator.forBlock, generator)
+        Object.assign(jsonGenerator.forBlock, generator)
     }
     this.render()
   }
@@ -27,8 +28,11 @@ export class BlocklyOid extends OidUI {
   }
 
   _blocksUpdated () {
-    this._notify('update',
-      {value: javascriptGenerator.workspaceToCode(this._ws)})
+    const json = jsonGenerator.workspaceToCode(this._ws)
+    if (json !== this._lastUpdate) {
+      this._lastUpdate = json
+      this._notify('update', {value: json})
+    }
   }
 
   handleResize () {

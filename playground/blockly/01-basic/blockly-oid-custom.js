@@ -114,16 +114,19 @@ generator: {
     const state = block.getFieldValue('state')
     const rhythm = block.getFieldValue('rhythm')
     const healthy = block.getFieldValue('healthy')
-    return `// heart ${state} ${rhythm} ${healthy}`
+    return JSON.stringify({type: 'heart',
+            state: state,
+            rhythm: rhythm,
+            healthy: healthy})
   },
   
   'heart_image': function (block, generator) {
     const entity = block.getFieldValue('entity')
-    return `// heart image ${entity}`
+    return `heart image ${entity}`
   },
   
   'sequence': function (block, generator) {
-    return `// sequence`
+    return `sequence`
   }
 }
 
