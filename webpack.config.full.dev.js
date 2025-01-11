@@ -4,6 +4,7 @@ module.exports = {
   entry: [
     './src/collections/fiction/assembly.js',
     './src/collections/blockly/assembly.js',
+    './src/collections/graph/assembly-layer.js',
     './src/collections/assembly.js'
   ],
   experiments: {
