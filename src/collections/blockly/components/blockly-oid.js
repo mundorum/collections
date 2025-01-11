@@ -14,6 +14,7 @@ export class BlocklyOid extends OidUI {
       const generator = this._getCustomField('generator')
       if (generator != null)
         Object.assign(jsonGenerator.forBlock, generator)
+      this._load = this._getCustomField('load')
     }
     this.render()
   }
@@ -24,6 +25,10 @@ export class BlocklyOid extends OidUI {
     if (toolbox != null) {
       this._ws = Blockly.inject(this._presentation, {toolbox})
       this._ws.addChangeListener(this._blocksUpdated.bind(this))
+      if (this._load != null) {
+        Blockly.serialization.workspaces.load(this._load, this._ws)
+        this._load = null
+      }
     }
   }
 
