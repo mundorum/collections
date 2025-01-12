@@ -1,3 +1,1 @@
-import { LivelyTalkOid } from './components/lively-talk-oid.js'
-
-export { LivelyTalkOid }
+export { LivelyTalkOid } from './components/lively-talk-oid.js'

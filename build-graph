@@ -1,0 +1,2 @@
+npm run build:graph
+npm run build:graph:dev
