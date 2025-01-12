@@ -1,4 +1,7 @@
-import { Oid } from '/pack/oid-full-dev.js'
+import { Oid } from '/lib/foundation/oidlib-dev.js'
+import { BlocklyOid } from '/lib/blockly/oid-blockly-dev.js'
+
+export { BlocklyOid }
 
 Oid.customize('boid:blockly', {
 
@@ -76,19 +79,19 @@ blocks:
 ],
 
 generator: {
-  'op1': function (block, generator) {
-    return `op1`
+  'op1': (block, generator) => {
+    return 'op1'
   },
-  'op2': function (block, generator) {
-    return `op2`
+  'op2': (block, generator) => {
+    return 'op2'
   },
-  'op3': function (block, generator) {
-    return `op3`
+  'op3': (block, generator) => {
+    return 'op3'
   },
-  'op4': function (block, generator) {
-    return `op4`
+  'op4': (block, generator) => {
+    return 'op4'
   },
-  'question': function (block, generator) {
+  'question': (block, generator) => {
     return JSON.stringify({type: 'kolb1',
                            q1: block.getFieldValue('q1'),
                            q2: block.getFieldValue('q2'),

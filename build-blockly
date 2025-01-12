@@ -1,0 +1,2 @@
+npm run build:blockly
+npm run build:blockly:dev

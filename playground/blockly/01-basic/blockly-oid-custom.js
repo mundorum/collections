@@ -1,4 +1,7 @@
-import { Oid } from '/pack/oid-full-dev.js'
+import { Oid } from '/lib/foundation/oidlib-dev.js'
+import { BlocklyOid } from '/lib/blockly/oid-blockly-dev.js'
+
+export { BlocklyOid }
 
 Oid.customize('boid:blockly', {
 
@@ -80,8 +83,8 @@ blocks:
         'type': 'field_dropdown',
         'name': 'entity',
         'options': [
-          [{src: 'images/heart1.svg', width: 100, height: 100, alt: 'heart 1'}, 'heart1'],
-          [{src: 'images/heart2.svg', width: 100, height: 100, alt: 'heart 2'}, 'heart2']
+          [{src: '../assets/images/heart1.svg', width: 100, height: 100, alt: 'heart 1'}, 'heart1'],
+          [{src: '../assets/images/heart2.svg', width: 100, height: 100, alt: 'heart 2'}, 'heart2']
         ]
       }
     ],
@@ -110,7 +113,7 @@ blocks:
 ],
 
 generator: {
-  'heart': function (block, generator) {
+  'heart': (block, generator) => {
     const state = block.getFieldValue('state')
     const rhythm = block.getFieldValue('rhythm')
     const healthy = block.getFieldValue('healthy')
@@ -120,13 +123,13 @@ generator: {
             healthy: healthy})
   },
   
-  'heart_image': function (block, generator) {
+  'heart_image': (block, generator) => {
     const entity = block.getFieldValue('entity')
     return `heart image ${entity}`
   },
   
-  'sequence': function (block, generator) {
-    return `sequence`
+  'sequence': (block, generator) => {
+    return 'sequence'
   }
 }
 

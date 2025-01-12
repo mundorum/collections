@@ -1,4 +1,8 @@
-import { css, Oid } from '/pack/oid-full-dev.js'
+import { css, Oid } from '/lib/foundation/oidlib-dev.js'
+
+import { LivelyTalkOid } from '/lib/fiction/oid-fiction-dev.js'
+
+export { LivelyTalkOid }
 
 Oid.customize('foid:lively-talk', {
   cid: 'robot',

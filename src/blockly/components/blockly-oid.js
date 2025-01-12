@@ -1,4 +1,4 @@
-import { html, css, Oid, OidUI } from '/src/lib/oidlib-dev.js'
+import { html, Oid, OidUI } from '/lib/foundation/oidlib-dev.js'
 import * as Blockly from 'blockly'
 export const jsonGenerator = new Blockly.Generator('JSON')
 

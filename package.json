@@ -9,6 +9,8 @@
   "scripts": {
     "build:fiction": "vite build --mode fiction_production",
     "build:fiction:dev": "vite build --mode fiction_development",
+    "build:blockly": "vite build --mode blockly_production",
+    "build:blockly:dev": "vite build --mode blockly_development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
