@@ -1,15 +1,15 @@
 # Preparing the Environment
 
-The most productive way I found to have the last Oid libraries updated is to clone the Oid repository. Inside a directory `/home/user/git/` clone it:
+Since the graph library is an independent project, we mapped its source here to build bundles. Considering that you cloned the `mundorum-graph` inside a directory `/home/user/git/`:
 
 ~~~
-git clone https://github.com/mundorum/oid.git
+git clone https://github.com/mundorum/graph.git
 ~~~
 
 `/home/user/git/` is a hypothetical directory you must update to your machine.
 
-Map the `lib` folder in this directory to the `lib` folder of the Oid repository:
+Map the `graph` folder in this directory to the lib folder of the Oid repository:
 
 ~~ 
-ln -s /home/user/git/oid/lib/ lib
+ln -s /home/user/git/graph/src/ graph
 ~~~

@@ -1,4 +1,4 @@
-import { html, css, Oid, OidUI } from '/src/lib/oidlib-dev.js'
+import { html, css, Oid, OidUI } from '/lib/foundation/oidlib-dev.js'
 
 export class LivelyTalkOid extends OidUI {
   async connectedCallback () {
