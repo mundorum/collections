@@ -10,6 +10,6 @@ git clone https://github.com/mundorum/graph.git
 
 Map the `graph` folder in this directory to the lib folder of the Oid repository:
 
-~~ 
+~~~
 ln -s /home/user/git/graph/src/ graph
 ~~~

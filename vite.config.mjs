@@ -4,7 +4,7 @@ import { resolve } from 'node:path'
 // Create different configs based on command (build vs serve)
 export default defineConfig(({ command, mode }) => {
   const [collection, target] = mode.split('_')
-  const rollupOptions = (collection === 'full') ? {} :
+  const rollupOptions = // (collection === 'full') ? {} :
     {
       external: (id) => id.includes('oidlib-dev.js'),
       output: {
