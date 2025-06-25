@@ -1,3 +1,5 @@
+import '@mundorum/oid/oid.css'
+export * from '@mundorum/oid/oid.js'
 export * from '../fiction/assembly.js'
 export * from '../graph/assembly.js'
 export * from '../blockly/assembly.js'

@@ -10,6 +10,6 @@ git clone https://github.com/mundorum/oid.git
 
 Map the `foundation` folder in this directory to the `/lib/foundation` folder of the Oid repository:
 
-~~ 
+~~~
 ln -s /home/user/git/oid/lib/foundation/ foundation
 ~~~

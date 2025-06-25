@@ -1,0 +1,11 @@
+npm run build:fiction
+npm run build:fiction:dev
+npm run build:graph
+npm run build:graph:dev
+npm run build:blockly
+npm run build:blockly:dev
+npm run build:full
+npm run build:full:dev
+cp ./LICENSE dist/
+cp ./README.md dist/
+cp ./package.json dist/

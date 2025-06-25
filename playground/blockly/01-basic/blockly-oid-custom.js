@@ -1,5 +1,5 @@
-import { Oid } from '/lib/foundation/oidlib-dev.js'
-import { BlocklyOid } from '/lib/blockly/oid-blockly-dev.js'
+import { Oid } from '@mundorum/oid/oid.js'
+import { BlocklyOid } from '@mundorum/collections/blockly.js'
 
 export { BlocklyOid }
 

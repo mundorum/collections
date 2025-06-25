@@ -1,6 +1,6 @@
-import { css, Oid } from '/lib/foundation/oidlib-dev.js'
+import { css, Oid } from '@mundorum/oid/oid.js'
 
-import { LivelyTalkOid } from '/lib/fiction/oid-fiction-dev.js'
+import { LivelyTalkOid } from '@mundorum/collections/fiction.js'
 
 export { LivelyTalkOid }
 
