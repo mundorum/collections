@@ -1,6 +1,6 @@
 {
   "name": "@mundorum/collections",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Thematic Oid collections.",
   "jsdelivr": "./full.min.js",
   "unpkg": "./full.min.js",
@@ -34,7 +34,7 @@
     "./graph.min.js",
     "./graph.css",
     "./graph.min.css",
-    ".full.js",
+    "./full.js",
     "./full.js.map",
     "./full.min.js",
     "./full.css"
