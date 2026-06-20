@@ -25,38 +25,37 @@ npm install @mundorum/collections
 
 ### Collections  Developer
 
-If you are a collection developer and you want your modifications to reflect in the playground or test environment automatically, you can emulate the collection library installation as a node module straight from the `dist` of the collection library.
+If you are a collection developer and you want your modifications to reflect in the playground or test environment automatically, you can wire the local `dist` directly via npm's `file:` protocol.
 
-If you previously installed @mundorum/oid via npm install, there are two steps to link local Mundorum libraries in the development mode.
+The `package.json` already declares `@mundorum/oid` as a `devDependency` pointing to the local -o-id `dist`. A single install is enough:
 
-Inside `/dist` directory of the collections project:
 ~~~bash
-npm link
+npm install
 ~~~
 
-Inside `/node_modules/` directory of you collections project:
-~~~bash
-npm link @mundorum/collections
-~~~
+This creates symlinks under `node_modules/@mundorum/` pointing to the local `dist` directories — no manual link commands needed. Reinstalling does not break the links.
 
-This procedure mimics the collections library installed in the npm straight from `dist`.
+To pick up source changes as you edit, run the watch build in the respective project. In the -o-id project:
+~~~bash
+npm run build:watch
+~~~
+And in the collections project (pick the relevant collection):
+~~~bash
+npm run build:watch:fiction
+npm run build:watch:graph
+npm run build:watch:blockly
+npm run build:watch:full
+~~~
 
 ### -o-id  Developer
 
-This is not a usual option for collection developers, who will usually modify the collection and only use the -o-id library. However, if you are both an -o-id library developer and a collection developer, suppose you are modifying the -o-id library and you want your modifications to reflect in your collection automatically. In that case, you can emulate also the -o-id library installation as a node module straight from the `dist` of the -o-id library.
+If you are also modifying the -o-id library alongside the collections, the `file:../../oid/dist` dependency in `devDependencies` already points to the local -o-id build output. After running `npm install` in this project, changes you build in -o-id will be picked up immediately — no additional link commands are required.
 
-There are two steps to link local Mundorum libraries in the development mode.
-
-Inside `/dist` directory of the -o-id library (e.g., `/git/mundorum/oid/dist`):
+Run both watch scripts in parallel (two terminals):
 ~~~bash
-npm link
+# terminal 1 — in the oid project
+npm run build:watch
+
+# terminal 2 — in the collections project
+npm run build:watch:full   # or whichever collection you are working on
 ~~~
-
-Inside `/node_modules/` directory of you collections project:
-~~~bash
-npm link @mundorum/oid @mundorum/collections
-~~~
-
-Notice that here you must specify both `@mundorum/oid` `@mundorum/collections`, since if you specify only `@mundorum/oid` it will disregard the previous `@mundorum/collections` link.
-
-This procedure mimics the -o-id library installed in the npm straight from `/git/mundorum/oid/dist`.

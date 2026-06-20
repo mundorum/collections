@@ -4,8 +4,15 @@
   <meta charset="utf-8">
   <title>Basic Lively Talk</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mundorum/oid/oid.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@mundorum/oid"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mundorum/collections/fiction.min.js"></script>
+  <script type="importmap">
+  { "imports": {
+      "@mundorum/oid/":         "https://cdn.jsdelivr.net/npm/@mundorum/oid/",
+      "@mundorum/collections/": "https://cdn.jsdelivr.net/npm/@mundorum/collections/" }}
+  </script>
+  <script type="module">
+    import '@mundorum/oid/oid.js'
+    import '@mundorum/collections/fiction.js'
+  </script>
 </head>
 <body>
   <h1>Basic Lively Talk</h1>

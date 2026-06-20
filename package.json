@@ -1,6 +1,6 @@
 {
   "name": "@mundorum/collections",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "description": "Thematic Oid collections.",
   "jsdelivr": "./full.min.js",
   "unpkg": "./full.min.js",
@@ -20,6 +20,10 @@
     "build:graph:dev": "vite build --mode graph_development",
     "build:full": "vite build --mode full_production",
     "build:full:dev": "vite build --mode full_development",
+    "build:watch:fiction": "vite build --mode fiction_development --watch",
+    "build:watch:blockly": "vite build --mode blockly_development --watch",
+    "build:watch:graph": "vite build --mode graph_development --watch",
+    "build:watch:full": "vite build --mode full_development --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
@@ -58,6 +62,9 @@
     "url": "https://github.com/mundorum/collections/issues"
   },
   "homepage": "https://github.com/mundorum/collections#readme",
+  "peerDependencies": {
+    "@mundorum/oid": ">=0.3.0"
+  },
   "devDependencies": {
     "vite": "^6.0.7"
   },

@@ -4,14 +4,21 @@
   <meta charset="utf-8">
   <title>Lively Talk with Button</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mundorum/oid/oid.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@mundorum/oid"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mundorum/collections/fiction.min.js"></script>
+  <script type="importmap">
+  { "imports": {
+      "@mundorum/oid/":         "https://cdn.jsdelivr.net/npm/@mundorum/oid/",
+      "@mundorum/collections/": "https://cdn.jsdelivr.net/npm/@mundorum/collections/" }}
+  </script>
+  <script type="module">
+    import '@mundorum/oid/oid.js'
+    import '@mundorum/collections/fiction.js'
+  </script>
 </head>
 <body>
   <h1>Lively Talk with Button</h1>
   <p>This is a lively talk in which the button triggers the speech.</p>
 
-  <oid-sphere assets="../assets/" stylesheet="/pack/oiddefault.css">
+  <oid-sphere assets="../assets/" stylesheet="https://cdn.jsdelivr.net/npm/@mundorum/oid/oid.min.css">
     <button-oid label="Talk"
       value="I am a terrible dinosaur!"
       publish="click~show/message">

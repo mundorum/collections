@@ -1,6 +1,6 @@
 {
   "name": "@mundorum/collections",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "description": "Thematic Oid collections.",
   "jsdelivr": "./full.min.js",
   "unpkg": "./full.min.js",
@@ -58,6 +58,9 @@
     "url": "https://github.com/mundorum/collections/issues"
   },
   "homepage": "https://github.com/mundorum/collections#readme",
+  "peerDependencies": {
+    "@mundorum/oid": ">=0.3.0"
+  },
   "devDependencies": {
     "vite": "^6.0.7"
   },

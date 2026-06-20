@@ -4,13 +4,18 @@
   <meta charset="utf-8">
   <title>Styled Lively Talk</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mundorum/oid/oid.min.css">
+  <script type="importmap">
+  { "imports": {
+      "@mundorum/oid/":         "https://cdn.jsdelivr.net/npm/@mundorum/oid/",
+      "@mundorum/collections/": "https://cdn.jsdelivr.net/npm/@mundorum/collections/" }}
+  </script>
   <script src="lively-talk-oid-styled.js" type="module"></script>
 </head>
 <body>
   <h1>Styled Lively Talk</h1>
   <p>This example changes the lively talk dimensions through style customization.</p>
 
-  <oid-sphere assets="../assets/" stylesheet="/pack/oiddefault.css">
+  <oid-sphere assets="../assets/" stylesheet="https://cdn.jsdelivr.net/npm/@mundorum/oid/oid.min.css">
     <button-oid label="Talk"
       value="I am a terrible dinosaur!"
       publish="click~show/message">
