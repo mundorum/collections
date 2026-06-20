@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Collections Playground Examples</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mundorum/collections/full.min.css">
+  <style>
+    /* ---- Base palette ---- */
+    :root {
+      --oid-bg:         #f5f1ed;
+      --oid-dark:       #252323;
+      --oid-mid:        #4e4b4a;
+      --oid-muted:      #9ba1af;
+      --oid-card-bg:    #faf7f4;
+      --oid-card-hover: #ede6dd;
+
+      --clr-blockly: #3a5f4f;
+      --clr-fiction: #5c4033;
+      --clr-graph:   #3a4a6b;
+    }
+
+    body {
+      background-color: var(--oid-bg);
+      font-family: 'Open Sans', sans-serif;
+      color: var(--oid-dark);
+    }
+
+    /* ---- Header ---- */
+    .site-header {
+      background: linear-gradient(135deg, #252323 0%, #2e3a38 60%, #3a5f4f 100%);
+      color: var(--oid-bg);
+      padding: 2rem 2rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(37,35,35,.4);
+    }
+
+    .site-header h1 {
+      margin: 0 0 .35rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      color: var(--oid-bg);
+    }
+
+    .site-header p {
+      margin: 0;
+      opacity: .75;
+      font-size: .95rem;
+      color: var(--oid-bg);
+    }
+
+    /* ---- Section titles ---- */
+    .section-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      padding-bottom: .4rem;
+      border-bottom: 3px solid currentColor;
+    }
+
+    /* ---- Cards ---- */
+    .example-card {
+      display: flex;
+      align-items: center;
+      background: var(--oid-card-bg);
+      border-radius: .375rem;
+      padding: .6rem 1rem;
+      margin-bottom: .5rem;
+      text-decoration: none;
+      color: var(--oid-dark);
+      box-shadow: 0 1px 3px rgba(37,35,35,.1);
+      border-left: 4px solid transparent;
+      transition: box-shadow .15s, border-color .15s, background .15s;
+    }
+
+    .example-card:hover {
+      box-shadow: 0 3px 10px rgba(37,35,35,.18);
+      background: var(--oid-card-hover);
+      text-decoration: none;
+      color: var(--oid-dark);
+    }
+
+    .example-card .badge {
+      font-size: .7rem;
+      min-width: 2.8rem;
+      text-align: center;
+      margin-right: .75rem;
+      flex-shrink: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .example-card .label {
+      flex: 1;
+      font-size: .9rem;
+    }
+
+    .example-card .arrow {
+      opacity: .4;
+      font-size: .8rem;
+      margin-left: .5rem;
+    }
+
+    /* ---- Per-section accents ---- */
+    .section-blockly .section-title      { color: var(--clr-blockly); }
+    .section-blockly .example-card       { border-left-color: var(--clr-blockly); }
+    .section-blockly .example-card:hover { border-left-color: #28443a; }
+    .section-blockly .badge              { background-color: var(--clr-blockly) !important; color: var(--oid-bg) !important; }
+
+    .section-fiction .section-title      { color: var(--clr-fiction); }
+    .section-fiction .example-card       { border-left-color: var(--clr-fiction); }
+    .section-fiction .example-card:hover { border-left-color: #3d2820; }
+    .section-fiction .badge              { background-color: var(--clr-fiction) !important; color: var(--oid-bg) !important; }
+
+    .section-graph   .section-title      { color: var(--clr-graph); }
+    .section-graph   .example-card       { border-left-color: var(--clr-graph); }
+    .section-graph   .example-card:hover { border-left-color: #273452; }
+    .section-graph   .badge              { background-color: var(--clr-graph)   !important; color: var(--oid-bg) !important; }
+
+    .text-muted {
+      color: #7a6e68 !important;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: .8rem;
+      color: var(--oid-mid);
+    }
+  </style>
+</head>
+<body>
+
+<div class="site-header">
+  <div class="container">
+    <h1>Collections Playground</h1>
+    <p>Interactive examples exploring the Mundorum Collections components — Blockly, Fiction, and Graph.</p>
+  </div>
+</div>
+
+<div class="container pb-4">
+
+  <!-- ═══ BLOCKLY EXAMPLES ════════════════════════════════════════════ -->
+  <div class="section-blockly mb-5">
+    <div class="section-title">Blockly Examples</div>
+    <p class="text-muted small mb-3">Integrating the Blockly visual programming editor as an OID component.</p>
+
+    <a class="example-card" href="blockly/01-basic/">
+      <span class="badge">BLK 1</span>
+      <span class="label">Basic Blockly — a simple Blockly workspace component</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="example-card" href="blockly/02-load/">
+      <span class="badge">BLK 2</span>
+      <span class="label">Blockly Load — pre-loading blocks into specific positions</span>
+      <span class="arrow">›</span>
+    </a>
+  </div>
+
+  <!-- ═══ FICTION / LIVELY TALK EXAMPLES ══════════════════════════════ -->
+  <div class="section-fiction mb-5">
+    <div class="section-title">Fiction Examples</div>
+    <p class="text-muted small mb-3">Building interactive character scenes with the Lively Talk component.</p>
+
+    <a class="example-card" href="fiction/01-character/">
+      <span class="badge">FIC 1</span>
+      <span class="label">Basic Lively Talk — displaying a character with a speech bubble</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="example-card" href="fiction/02-character-button/">
+      <span class="badge">FIC 2</span>
+      <span class="label">Lively Talk with Button — button-triggered character interaction</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="example-card" href="fiction/03-character-slider/">
+      <span class="badge">FIC 3</span>
+      <span class="label">Lively Talk with Slider — slider-controlled character messages</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="example-card" href="fiction/04-character-style/">
+      <span class="badge">FIC 4</span>
+      <span class="label">Styled Lively Talk — custom-styled character component</span>
+      <span class="arrow">›</span>
+    </a>
+  </div>
+
+  <!-- ═══ GRAPH EXAMPLES ══════════════════════════════════════════════ -->
+  <div class="section-graph mb-5">
+    <div class="section-title">Graph Examples</div>
+    <p class="text-muted small mb-3">Rendering network graphs and tree structures with the Graph OID component.</p>
+
+    <a class="example-card" href="graph/01-graph-custom/">
+      <span class="badge">GRP 1</span>
+      <span class="label">Graph Custom — generating a simple custom graph</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="example-card" href="graph/02-vertical-tree/">
+      <span class="badge">GRP 2</span>
+      <span class="label">Vertical Tree — graph rendered with a vertical/horizontal tree layout</span>
+      <span class="arrow">›</span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  Mundorum Collections &mdash; Playground Examples
+</footer>
+
+</body>
+</html>
